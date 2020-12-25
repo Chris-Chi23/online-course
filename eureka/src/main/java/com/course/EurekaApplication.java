@@ -12,12 +12,11 @@ import org.springframework.core.env.ConfigurableEnvironment;
 @EnableEurekaServer
 public class EurekaApplication {
 	private static final Logger LOG = LoggerFactory.getLogger(EurekaApplication.class);
+
 	public static void main(String[] args) {
 		SpringApplication app = new SpringApplication(EurekaApplication.class);
 		ConfigurableEnvironment env = app.run(args).getEnvironment();
 		LOG.info("Startup successful");
 		LOG.info("Eureka address: \thttp://127.0.0.1:{}", env.getProperty("server.port"));
-
 	}
-
 }
